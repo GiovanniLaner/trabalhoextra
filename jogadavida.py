@@ -1,8 +1,12 @@
+from itertools import count
 import random
 
 
 jogadorUm = input('Informe o nome do jogador 1:')
 jogadorDois = input('Informe o nome do jogador 2:')
+
+
+
 
 def rodarDados(rodarDado, numeroCasa):
     numeroCasa = 0
@@ -53,8 +57,9 @@ def dadoCasa(numeroCasa):
         return jogarNovamente, numeroCasa
 
 def morreCasa(numeroJogador):
-        
-    print(numeroJogador)
+    
+
+    print('Você morreu, volte ao começo', numeroJogador)
 
     return numeroJogador
 
@@ -63,15 +68,46 @@ def desafioMatematicoCasa(numeroJogador):
     return numeroJogador
 
 def formaturaCasa(numeroJogador):
+    print('Você se formou, rode o dado novamente e veja em qual curso foi.')
+    
+    if rodarDados() == 1:
+        print('Formou-se em Direto!')
+    elif rodarDados() == 2:
+        print('Formou-se em Gastronomia!')
+    elif rodarDados() == 3:
+        print('Formou-se em Engenharia Civil!')
+    elif rodarDados() == 4:
+        print('Formou-se em Educação Física!')
+    elif rodarDados() == 5:
+        print('Formou-se em Astronomia!')
+    elif rodarDados() == 6:
+        print('Formou-se em Música!')
+    else:
+        print('Jogo quebrou novamente kk.')    
 
     return numeroJogador
 
 def terFilhosCasa(numeroJogador):
+    filho = 0
+
+    if rodarDados() == 5:
+        filho = filho + 2
+        print('Você teve gêmeos, desepesas em dobro! kkk')
+    else:
+        filho = filho + 1
+        print('Você foi premiado com um bebê!')
 
     return numeroJogador
 
 def casarCasa(numeroJogador):
+    casamento = False
     
+    if numeroJogador == True:
+        casamento == True
+        return True
+    else:
+        print('Jogou quebrou de novo XD')
+
     return numeroJogador
 
 def ficarFamosoCasa(numeroJogador):
@@ -94,3 +130,4 @@ def voltarCasas(numeroJogador):
 
     return numeroJogador
 
+executaRegras()
